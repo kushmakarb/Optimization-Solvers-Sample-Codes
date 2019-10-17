@@ -1,0 +1,15 @@
+
+model "Nonlinear Program Example"
+! mmxnlp specifically provides access to nonlinear xpress-optimizer
+uses "mmxnlp";
+declarations
+! variables
+x1,x2: mpvar
+end-declarations
+! constraint
+2*x1+x2<=3
+! objective function
+maximise( log(x1+1)+2*x2)
+! solution
+writeln("Optimal solution: x1=",getsol(x1)," x2=",getsol(x2))
+writeln("Optimal Objective: ", getobjval)

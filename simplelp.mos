@@ -1,0 +1,19 @@
+model "Linear Program Example"
+! mmxprs module provides access to the Xpress-Optimizer
+! from within a Mosel model
+uses "mmxprs"; 
+
+declarations
+	! variables
+	x1, x2: mpvar
+end-declarations
+! constraints
+x1+2*x2 <=8 
+2*x1+x2<=8
+! objective function
+maximise(30*x1+20*x2) 
+! Solution
+writeln("x1:",getsol(x1))
+writeln("x1:",getsol(x2))
+writeln("Optimal Objective Value: ",getobjval) 
+end-model
