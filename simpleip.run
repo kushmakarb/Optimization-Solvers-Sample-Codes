@@ -1,0 +1,5 @@
+reset;
+model simpleip.mod;
+option solver xpress;
+solve;
+display x1, x2;
